@@ -1,7 +1,7 @@
 {
-  "name": "vega-template",
+  "name": "vega-auth",
   "version": "0.0.1",
-  "description": "Шаблон для создания проектов VEGA",
+  "description": "Авторизация",
   "repository": "git@github.com:gpn-prototypes/vega-template.git",
   "author": "csssr",
   "license": "UNLICENSED",
@@ -34,10 +34,14 @@
   },
   "dependencies": {
     "@gpn-prototypes/vega-ui": "^2.13.0",
+    "axios": "^0.20.0",
     "bem-cn": "^3.0.1",
+    "final-form": "^4.20.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "single-spa-react": "^3.0.1"
+    "react-final-form": "^6.5.1",
+    "single-spa-react": "^3.0.1",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@gpn-prototypes/frontend-configs": "^1.2.12",

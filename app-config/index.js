@@ -3,7 +3,7 @@ const path = require('path');
 const root = process.env.PROJECT_ROOT_DIR || path.join(__dirname, '..');
 
 const getAppConfig = () => ({
-  projectName: 'template', // изменить на название своего проекта
+  projectName: 'auth', // изменить на название своего проекта
   root,
   entry: path.join(root, 'src/App/index.tsx'),
   port: process.env.PORT || 3000,
