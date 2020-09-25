@@ -63,7 +63,7 @@
     "postcss-loader": "^4.0.2",
     "systemjs-webpack-interop": "^2.1.2",
     "ts-essentials": "^7.0.0",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.11",
     "webpack-config-single-spa-react": "^1.12.0",
     "webpack-config-single-spa-react-ts": "^1.12.0",
