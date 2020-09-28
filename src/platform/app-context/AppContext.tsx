@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react';
 import { AuthAPI } from '@vega/data/auth';
 
-type AppContext = {
+type AppContextType = {
   authAPI: AuthAPI;
 };
 
-export const AppContext = createContext<AppContext>({
+export const AppContext = createContext<AppContextType>({
   authAPI: {
     isFetching: false,
     error: null,
@@ -15,4 +15,4 @@ export const AppContext = createContext<AppContext>({
   },
 });
 
-export const useAppContext = (): AppContext => useContext(AppContext);
+export const useAppContext = (): AppContextType => useContext(AppContext);
