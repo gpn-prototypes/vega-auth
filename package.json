@@ -26,11 +26,13 @@
     "format": "prettier --write '{src,types,scripts}/**/*.{json,{j,t}s{,x},css,}'",
     "coverage": "jest --all --coverage",
     "lint": "npm-run-all lint:*",
-    "lint-fix": "npm-run-all format lint-fix:*",
+    "lint:fix": "npm-run-all format lint:fix:*",
     "lint:ts": "eslint '{src,types}/**/*.ts{,x}'",
-    "lint-fix:ts": "eslint '{src,types}/**/*.ts{,x}' --fix",
+    "lint:fix:ts": "eslint '{src,types}/**/*.ts{,x}' --fix",
     "lint:css": "stylelint 'src/**/*.css'",
-    "lint-fix:css": "stylelint 'src/**/*.css' --fix"
+    "lint:fix:css": "stylelint 'src/**/*.css' --fix",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . -o --"
   },
   "dependencies": {
     "@gpn-prototypes/vega-ui": "^2.13.0",
