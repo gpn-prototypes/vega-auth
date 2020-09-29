@@ -2,7 +2,7 @@
   "name": "vega-auth",
   "version": "0.0.1",
   "description": "Авторизация",
-  "repository": "git@github.com:gpn-prototypes/vega-template.git",
+  "repository": "git@github.com:gpn-prototypes/vega-auth.git",
   "author": "csssr",
   "license": "UNLICENSED",
   "engines": {
