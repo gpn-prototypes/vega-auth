@@ -1,8 +1,8 @@
 {
-  "name": "vega-template",
+  "name": "vega-auth",
   "version": "0.0.1",
-  "description": "Шаблон для создания проектов VEGA",
-  "repository": "git@github.com:gpn-prototypes/vega-template.git",
+  "description": "Авторизация",
+  "repository": "git@github.com:gpn-prototypes/vega-auth.git",
   "author": "csssr",
   "license": "UNLICENSED",
   "engines": {
@@ -26,18 +26,24 @@
     "format": "prettier --write '{src,types,scripts}/**/*.{json,{j,t}s{,x},css,}'",
     "coverage": "jest --all --coverage",
     "lint": "npm-run-all lint:*",
-    "lint-fix": "npm-run-all format lint-fix:*",
+    "lint:fix": "npm-run-all format lint:fix:*",
     "lint:ts": "eslint '{src,types}/**/*.ts{,x}'",
-    "lint-fix:ts": "eslint '{src,types}/**/*.ts{,x}' --fix",
+    "lint:fix:ts": "eslint '{src,types}/**/*.ts{,x}' --fix",
     "lint:css": "stylelint 'src/**/*.css'",
-    "lint-fix:css": "stylelint 'src/**/*.css' --fix"
+    "lint:fix:css": "stylelint 'src/**/*.css' --fix",
+    "lint:md": "remark . --frail",
+    "lint:md:fix": "remark . -o --"
   },
   "dependencies": {
     "@gpn-prototypes/vega-ui": "^2.13.0",
+    "axios": "^0.20.0",
     "bem-cn": "^3.0.1",
+    "final-form": "^4.20.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "single-spa-react": "^3.0.1"
+    "react-final-form": "^6.5.1",
+    "single-spa-react": "^3.0.1",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@gpn-prototypes/frontend-configs": "^1.2.12",
