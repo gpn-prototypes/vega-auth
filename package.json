@@ -42,7 +42,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-final-form": "^6.5.1",
-    "single-spa-react": "^3.0.1",
+    "single-spa-react": "^3.1.0",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
