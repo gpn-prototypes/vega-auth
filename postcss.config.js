@@ -1,6 +1,6 @@
-const createPostcssConfig = require('@gpn-prototypes/frontend-configs/postcss.config');
+const nested = require('postcss-nested');
 
 module.exports = {
   // eslint-disable-next-line global-require
-  plugins: [...createPostcssConfig().plugins],
+  plugins: [nested()],
 };

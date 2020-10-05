@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 const path = require('path');
