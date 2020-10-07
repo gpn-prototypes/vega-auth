@@ -20,7 +20,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --progress --config ./webpack.forShellConfig.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --mode development",
-    "dev-in-shell": "cross-env NODE_ENV=development webpack-dev-server --open --mode development  --config ./webpack.forShellConfig.js",
+    "dev:shell": "cross-env NODE_ENV=development webpack-dev-server --open --mode development  --config ./webpack.forShellConfig.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "format": "prettier --write {src,types,scripts}/**/*.{json,{j,t}s{,x},css,}",
@@ -33,7 +33,7 @@
     "lint:fix:css": "stylelint src/**/*.css --fix"
   },
   "dependencies": {
-    "@gpn-prototypes/vega-ui": "^2.13.0",
+    "@gpn-prototypes/vega-ui": "^2.13.4",
     "axios": "^0.20.0",
     "bem-cn": "^3.0.1",
     "final-form": "^4.20.1",

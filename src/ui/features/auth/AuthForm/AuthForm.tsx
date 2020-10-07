@@ -1,8 +1,9 @@
 import React from 'react';
 import { Field, Form as FinalForm } from 'react-final-form';
 import { Button, Checkbox, Form, Logo, Text } from '@gpn-prototypes/vega-ui';
-import { TextField } from '@vega/ui/core';
-import { createValidate, validators } from '@vega/ui/forms/validation';
+
+import { TextField } from '../../../core';
+import { createValidate, validators } from '../../../forms/validation';
 
 import { cnAuthForm } from './cn-auth-form';
 import { GazpromLogo } from './GazpromLogo';
@@ -12,7 +13,6 @@ import './AuthForm.css';
 export type State = {
   login: string;
   password: string;
-  remember: boolean;
 };
 
 export type AuthFormProps = {

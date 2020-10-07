@@ -1,14 +1,20 @@
 import React from 'react';
 
-// import { AppProvider } from '../platform/app-context';
-// import { AppView } from './AppView';
+import { AppProvider } from '../platform/app-context';
+
+import { AppView } from './AppView';
+
 import './App.css';
 
-export const App = (): React.ReactElement => {
+type Props = {
+  identity?: unknown;
+};
+
+export const App = (props: Props): React.ReactElement => {
+  const { identity } = props;
   return (
-    <div>auth</div>
-    // <AppProvider>
-    //   <AppView />
-    // </AppProvider>
+    <AppProvider identity={identity}>
+      <AppView />
+    </AppProvider>
   );
 };

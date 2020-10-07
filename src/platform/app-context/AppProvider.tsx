@@ -1,31 +1,14 @@
 import React from 'react';
-// import { APIClient, APIClientContext } from '@vega/platform/api-client';
-import { CookiesContext } from '@vega/platform/cookies';
-import Cookie from 'universal-cookie';
 
-// import { getAppConfig } from '../../../app-config';
-import { AppStoreProvider } from './AppStoreProvider';
-
-const cookies = new Cookie();
-
-// const { baseApiUrl, apiPath, useApiProxy } = getAppConfig();
-
-// console.log({ baseApiUrl, apiPath, useApiProxy });
-
-// const apiClient = new APIClient(cookies, { baseApiUrl, apiPath, useApiProxy });
+import { AppContext } from './AppContext';
 
 type AppProviderProps = {
   children: React.ReactNode;
+  identity: unknown;
 };
 
 export const AppProvider: React.FC<AppProviderProps> = (props) => {
-  const { children } = props;
+  const { children, identity } = props;
 
-  return (
-    <CookiesContext.Provider value={cookies}>
-      {/* <APIClientContext.Provider value={apiClient}> */}
-      <AppStoreProvider>{children}</AppStoreProvider>
-      {/* </APIClientContext.Provider> */}
-    </CookiesContext.Provider>
-  );
+  return <AppContext.Provider value={{ identity }}>{children}</AppContext.Provider>;
 };

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Carousel } from '@gpn-prototypes/vega-ui';
-import { useAppContext } from '@vega/platform/app-context';
-import { AuthForm } from '@vega/ui/features/auth';
+
+// import { useAppContext } from '../../platform/app-context';
+import { AuthForm } from '../../ui/features/auth';
 
 import { cnAuthPage } from './cn-auth-page';
 
@@ -9,8 +10,7 @@ import './AuthPage.css';
 
 export const AuthPage: React.FC = () => {
   const [idx, setIdx] = React.useState(0);
-  const { authAPI } = useAppContext();
-  const { isFetching, login } = authAPI;
+  // const { identity } = useAppContext();
 
   const firstSlideCaption = 'Какой-то текст про Вега 2.0.';
 
@@ -20,8 +20,8 @@ export const AuthPage: React.FC = () => {
   return (
     <div className={cnAuthPage()}>
       <AuthForm
-        isFetching={isFetching}
-        onLogin={login}
+        isFetching={false}
+        onLogin={() => {}} // TODO: прокинуть identity.auth
         containerClassName={cnAuthPage('FormContainer')}
         formClassName={cnAuthPage('Form')}
       />
