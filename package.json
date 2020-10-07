@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress",
+    "build": "cross-env NODE_ENV=production webpack --mode production --progress --config ./webpack.forShellConfig.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --mode development",
     "dev-in-shell": "cross-env NODE_ENV=development webpack-dev-server --open --mode development  --config ./webpack.forShellConfig.js",
     "test": "jest",
@@ -74,6 +74,7 @@
     "webpack-config-single-spa-react-ts": "^1.12.0",
     "webpack-config-single-spa-ts": "^1.12.0",
     "webpack-dev-server": "^3.11.0",
+    "webpack-import-map-plugin": "^1.0.0-alpha0",
     "webpack-merge": "^5.1.4"
   }
 }
