@@ -7,10 +7,8 @@ import './App.css';
 
 export const AppView = (): React.ReactElement => {
   return (
-    <Root defaultTheme="dark">
-      <div className="App">
-        <AuthPage />
-      </div>
+    <Root defaultTheme="dark" className="App">
+      <AuthPage />
     </Root>
   );
 };

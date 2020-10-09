@@ -5,6 +5,9 @@ import { App } from './App';
 
 describe('App', () => {
   test('корректно рендерится', () => {
-    render(<App />);
+    const identity = {
+      getToken: () => 'token',
+    };
+    render(<App identity={identity} />);
   });
 });
