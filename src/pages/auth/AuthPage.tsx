@@ -17,16 +17,6 @@ export const AuthPage: React.FC = () => {
   const secondSlideCaption =
     'Какой-то текст про то, какие задачи можно очень круто и быстро решать с помощью Веги 2.0.';
 
-  // @ts-expect-error: ожидает типы
-  const token = identity.getToken();
-
-  React.useEffect(() => {
-    if (token) {
-      const evt = new Event('single-spa:before-routing-event');
-      window.dispatchEvent(evt);
-    }
-  }, [token]);
-
   return (
     <div className={cnAuthPage()}>
       <AuthForm
