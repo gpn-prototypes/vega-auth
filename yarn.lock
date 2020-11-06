@@ -11323,19 +11323,19 @@ webpack-config-single-spa-react@^1.12.0, webpack-config-single-spa-react@^1.17.3
   dependencies:
     webpack-config-single-spa "^1.17.3"
 
-webpack-config-single-spa-ts@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-ts/-/webpack-config-single-spa-ts-1.12.0.tgz#3f4bf40e75c951ff51040c8dbfe32f8b57b4fa71"
-  integrity sha512-P7ByX17TvXfhPItkyOEj8WptJsZpsigqIehqRdw1kIns76AwvDOGYLIcOqms/ddAvcS69jFeEFgqLebjkO6x8g==
+webpack-config-single-spa-ts@^1.12.0, webpack-config-single-spa-ts@^1.17.4:
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-ts/-/webpack-config-single-spa-ts-1.17.4.tgz#488649e2b070635f7971941cb5fc7e81bdd48849"
+  integrity sha512-7WLeuXZy7LXzK6NMeK6cbvLHeQZTv3Vh1pS/cz2vAVPWE8ULRSz8vmrla1X7WPZixQTEy5SiE0VCnvHaACKqMA==
   dependencies:
     fork-ts-checker-webpack-plugin "^4.1.3"
-    webpack-config-single-spa "^1.12.0"
+    webpack-config-single-spa "^1.17.4"
     webpack-merge "^4.2.2"
 
-webpack-config-single-spa@^1.12.0, webpack-config-single-spa@^1.17.3:
-  version "1.17.3"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa/-/webpack-config-single-spa-1.17.3.tgz#0bf7fbb19e9a51d1c656d2312edb258c180a5756"
-  integrity sha512-DfQjRVnmNKX7jEUCZPdX6DE+gmILW+X0mYrH+KsreaNVBFsKSx1XzJOqgr10zpVdcK0Y8Y1T+bMo0cxgtsQuLQ==
+webpack-config-single-spa@^1.17.3, webpack-config-single-spa@^1.17.4:
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa/-/webpack-config-single-spa-1.17.4.tgz#a6bb3a553b3f16dcdb9a38c90ba45d22c4c8af2c"
+  integrity sha512-llnGFiIdOEDRkVJzDSKQcduIIAEuJZOgmL2yZzCNEW2I1+dJoBkq5g2/8ivcDfV94Q7gyGeA3YAjq6QhrHvDDA==
   dependencies:
     babel-loader "^8.1.0"
     clean-webpack-plugin "^3.0.0"
