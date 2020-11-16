@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, Form as FinalForm } from 'react-final-form';
 import { Button, Checkbox, Form, Logo, Text } from '@gpn-prototypes/vega-ui';
 
+import { useSnackbar } from '../../../../platform';
 import { TextField } from '../../../core';
 import { createValidate, validators } from '../../../forms/validation';
 
@@ -16,7 +17,7 @@ export type State = {
 };
 
 export type AuthFormProps = {
-  onLogin: (state: State) => void;
+  onLogin: (state: State) => Promise<void>;
   isFetching?: boolean;
   containerClassName?: string;
   formClassName?: string;
@@ -39,11 +40,25 @@ type AuthFormComponent = React.FC<AuthFormProps> & {
   testID: typeof testId;
 };
 
+type Error = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+};
+
 export const AuthForm: AuthFormComponent = (props) => {
   const { onLogin, isFetching, containerClassName, formClassName } = props;
+  const snackbar = useSnackbar();
 
   const handleAuthSubmit = (values: State): void => {
-    onLogin(values);
+    onLogin(values).catch((error: Error) => {
+      if (error) {
+        snackbar.addItem({
+          key: `${error.code}-alert`,
+          message: error.message,
+          status: 'alert',
+        });
+      }
+    });
   };
 
   const validate = (values: State): ValidateMap => validator(values);

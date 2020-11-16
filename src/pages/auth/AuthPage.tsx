@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Carousel } from '@gpn-prototypes/vega-ui';
 
-import { useAppContext } from '../../platform/app-context';
+import { useAppContext } from '../../platform';
 import { AuthForm } from '../../ui/features/auth';
 
 import { cnAuthPage } from './cn-auth-page';
@@ -22,7 +22,7 @@ export const AuthPage: React.FC = () => {
       <AuthForm
         isFetching={false}
         // @ts-expect-error: ожидает типы
-        onLogin={identity.auth} // TODO: прокинуть identity.auth
+        onLogin={identity?.auth}
         containerClassName={cnAuthPage('FormContainer')}
         formClassName={cnAuthPage('Form')}
       />

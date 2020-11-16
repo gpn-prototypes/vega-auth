@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AppProvider } from '../platform/app-context';
+import { AppProvider } from '../platform';
 
 import { AppView } from './AppView';
 

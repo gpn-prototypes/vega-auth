@@ -7,7 +7,7 @@ function renderComponent(props: AuthFormProps): RenderResult {
   return render(<AuthForm {...props} />);
 }
 
-const onLogin = jest.fn();
+const onLogin = jest.fn(() => Promise.resolve());
 
 function findLoginInput(): HTMLElement {
   return screen.getByTestId(AuthForm.testID.loginInput);
