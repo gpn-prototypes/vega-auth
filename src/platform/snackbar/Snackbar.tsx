@@ -14,8 +14,8 @@ export type SnackbarContextType = {
 };
 
 const styles = {
-  snackbar: 'snackbar',
-  portal: 'snackbar-portal',
+  snackbar: 'vega-auth-snackbar',
+  portal: 'vega-auth-snackbar-portal',
 };
 
 function reducer(state: State, action: Action) {
