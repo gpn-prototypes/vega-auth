@@ -1,14 +1,14 @@
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const singleSpaDefaults = require('webpack-config-single-spa-react-ts');
 const ImportMapPlugin = require('webpack-import-map-plugin');
 const { getAppConfig } = require('./app-config');
 
-const dotenv = require('dotenv');
-const webpack = require('webpack');
-
 const { projectName } = getAppConfig();
 
 const externalPackages = ['@gpn-prototypes/vega-ui'];
+
 function getPort(webpackConfigEnv) {
   let port = process.env.PORT || 3000;
   if (webpackConfigEnv !== undefined && 'port' in webpackConfigEnv) {
