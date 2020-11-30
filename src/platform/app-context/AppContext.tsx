@@ -1,11 +1,12 @@
 import { createContext, useContext } from 'react';
+import { Identity } from '@gpn-prototypes/vega-sdk';
 
 type AppContextType = {
-  identity: unknown;
+  identity: Identity;
 };
 
 export const AppContext = createContext<AppContextType>({
-  identity: () => {},
+  identity: new Identity({ apiUrl: '/api' }),
 });
 
 export const useAppContext = (): AppContextType => useContext(AppContext);

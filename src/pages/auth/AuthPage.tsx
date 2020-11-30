@@ -30,8 +30,7 @@ export const AuthPage: React.FC = () => {
     <div className={cnAuthPage()}>
       <AuthForm
         isFetching={false}
-        // @ts-expect-error: ожидает типы
-        onLogin={identity?.auth}
+        onLogin={identity.auth}
         containerClassName={cnAuthPage('FormContainer')}
         formClassName={cnAuthPage('Form')}
       />

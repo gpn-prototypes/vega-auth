@@ -1,10 +1,11 @@
 import React from 'react';
+import { Identity } from '@gpn-prototypes/vega-sdk';
 
 import { AppContext } from './AppContext';
 
 type AppProviderProps = {
   children: React.ReactNode;
-  identity: unknown;
+  identity: Identity;
 };
 
 export const AppProvider: React.FC<AppProviderProps> = (props) => {
