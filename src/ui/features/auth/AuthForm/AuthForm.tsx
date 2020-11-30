@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form as FinalForm } from 'react-final-form';
+import { createValidate, validators } from '@gpn-prototypes/vega-sdk';
 import { Button, Form, Logo, Text } from '@gpn-prototypes/vega-ui';
 
 import { useSnackbar } from '../../../../platform';
 import { TextField } from '../../../core';
-import { createValidate, validators } from '../../../forms/validation';
 
 import { cnAuthForm } from './cn-auth-form';
 import { GazpromLogo } from './GazpromLogo';
