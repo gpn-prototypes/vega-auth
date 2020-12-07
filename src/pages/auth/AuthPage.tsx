@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Carousel } from '@gpn-prototypes/vega-ui';
+import React, { useEffect, useState } from 'react';
+import { Carousel, Loader } from '@gpn-prototypes/vega-ui';
 
 import { useAppContext } from '../../platform';
 import { AuthForm } from '../../ui/features/auth';
@@ -23,8 +23,28 @@ const slides: Slide[] = [
 ];
 
 export const AuthPage: React.FC = () => {
-  const [idx, setIdx] = React.useState(0);
+  const [idx, setIdx] = useState(0);
   const { identity } = useAppContext();
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const doNotUseAuthSSO = localStorage.getItem('doNotUseAuthSSO');
+
+    if (doNotUseAuthSSO === 'true') {
+      setIsLoading(false);
+      return;
+    }
+
+    // @ts-expect-error: ожидает типы
+    identity?.authSSO().catch(() => setIsLoading(false));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className={cnAuthPage()}>

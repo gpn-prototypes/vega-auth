@@ -8,7 +8,8 @@ import { App } from './App';
 const noop = (): void => {};
 
 const identity = {
-  getToken: noop,
+  auth: () => 'token',
+  authSSO: () => new Promise(() => {}),
 };
 
 const notifications = {
