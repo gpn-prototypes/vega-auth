@@ -34,4 +34,12 @@
 
     display: block;
   }
+
+  &__Link {
+    color: var(--color-typo-secondary);
+
+    &:hover {
+      color: var(--color-typo-primary);
+    }
+  }
 }
