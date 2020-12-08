@@ -1,6 +1,6 @@
 import React from 'react';
-import { Field, Form as FinalForm } from 'react-final-form';
-import { Button, Checkbox, Form, Logo, Text } from '@gpn-prototypes/vega-ui';
+import { Form as FinalForm } from 'react-final-form';
+import { Button, Form, Logo, Text } from '@gpn-prototypes/vega-ui';
 
 import { useSnackbar } from '../../../../platform';
 import { TextField } from '../../../core';
@@ -114,19 +114,6 @@ export const AuthForm: AuthFormComponent = (props) => {
                   validateOnTouched
                 />
               </Form.Field>
-            </Form.Row>
-            <Form.Row space="l">
-              <Field id="remember" name="remember" type="checkbox">
-                {({ input }): React.ReactNode => (
-                  <Checkbox
-                    {...input}
-                    checked={Boolean(input.checked)}
-                    onChange={({ e }): void => input.onChange(e)}
-                    size="m"
-                    label="Запомнить меня"
-                  />
-                )}
-              </Field>
             </Form.Row>
             <Form.Row space="xl">
               <Button
