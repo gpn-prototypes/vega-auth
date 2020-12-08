@@ -25,8 +25,8 @@ module.exports = (webpackConfigEnv) => {
   });
 
   const PORT = getPort(webpackConfigEnv);
-  const YC_DEPLOYMENT = process.env.YC_DEPLOYMENT === 'true'; // Yandex Cloud Deployment
   const NODE_ENV = process.env.NODE_ENV || 'development';
+  const YC_DEPLOYMENT = process.env.YC_DEPLOYMENT === 'true'; // Yandex Cloud Deployment
   const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
   const envConfig = dotenv.config();
 
