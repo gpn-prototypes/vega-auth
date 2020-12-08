@@ -29,15 +29,14 @@ export const AuthPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const doNotUseAuthSSO = localStorage.getItem('doNotUseAuthSSO');
+    const useUnstableAuthSSO = localStorage.getItem('useUnstableAuthSSO');
 
-    if (doNotUseAuthSSO === 'true') {
+    if (useUnstableAuthSSO === 'true') {
+      // @ts-expect-error: ожидает типы
+      identity?.authSSO().catch(() => setIsLoading(false));
+    } else {
       setIsLoading(false);
-      return;
     }
-
-    // @ts-expect-error: ожидает типы
-    identity?.authSSO().catch(() => setIsLoading(false));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
