@@ -33,7 +33,7 @@
     "lint:fix:css": "stylelint src/**/*.css --fix"
   },
   "dependencies": {
-    "@gpn-prototypes/vega-ui": "^2.14.5",
+    "@gpn-prototypes/vega-ui": "^2.15.11",
     "axios": "^0.21.0",
     "bem-cn": "^3.0.1",
     "final-form": "^4.20.1",
