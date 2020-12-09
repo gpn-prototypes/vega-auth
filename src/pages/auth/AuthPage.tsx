@@ -4,18 +4,28 @@ import { Carousel, Loader } from '@gpn-prototypes/vega-ui';
 import { useAppContext } from '../../platform';
 import { AuthForm } from '../../ui/features/auth';
 
+import imgCreate from './images/carousel-create-project.png';
+import imgRb from './images/carousel-rb.png';
+import imgTotal from './images/carousel-total.png';
 import { cnAuthPage } from './cn-auth-page';
 
 import './AuthPage.css';
+
+type Slide = {
+  caption: string;
+  img: string;
+};
+
+const slides: Slide[] = [
+  { caption: 'Быстрое создание проекта', img: imgCreate },
+  { caption: 'Удобное заполнение Ресурсной Базы и рисков', img: imgRb },
+  { caption: 'Наглядный результат расчёта Ресурсной Базы ', img: imgTotal },
+];
 
 export const AuthPage: React.FC = () => {
   const [idx, setIdx] = useState(0);
   const { identity } = useAppContext();
 
-  const firstSlideCaption = 'Какой-то текст про Вега 2.0.';
-
-  const secondSlideCaption =
-    'Какой-то текст про то, какие задачи можно очень круто и быстро решать с помощью Веги 2.0.';
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -46,12 +56,15 @@ export const AuthPage: React.FC = () => {
       />
       <div className={cnAuthPage('Teaser')}>
         <Carousel currentIdx={idx} onChange={setIdx} className={cnAuthPage('TeaserCarousel')}>
-          <Carousel.Slide caption={firstSlideCaption} className={cnAuthPage('Slide')}>
-            <div />
-          </Carousel.Slide>
-          <Carousel.Slide caption={secondSlideCaption} className={cnAuthPage('Slide')}>
-            <div />
-          </Carousel.Slide>
+          {slides.map((slide) => (
+            <Carousel.Slide
+              key={slide.caption}
+              caption={slide.caption}
+              className={cnAuthPage('Slide')}
+            >
+              <img src={slide.img} alt={slide.caption} />
+            </Carousel.Slide>
+          ))}
         </Carousel>
       </div>
     </div>
