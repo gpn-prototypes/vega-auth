@@ -2,7 +2,7 @@ import React from 'react';
 import { Form as FinalForm } from 'react-final-form';
 import { Button, Form, Logo, Text } from '@gpn-prototypes/vega-ui';
 
-import { useSnackbar } from '../../../../platform';
+import { useAppContext } from '../../../../platform';
 import { TextField } from '../../../core';
 import { createValidate, validators } from '../../../forms/validation';
 
@@ -50,21 +50,23 @@ const authErrorMessage =
 
 export const AuthForm: AuthFormComponent = (props) => {
   const { onLogin, isFetching, containerClassName, formClassName } = props;
-  const snackbar = useSnackbar();
+  const { notifications } = useAppContext();
 
   const handleAuthSubmit = (values: State): void => {
     onLogin(values).catch((error: Error) => {
       const key = `${error.code}-alert`;
       const message = error.code === 'AUTH_ERROR' ? authErrorMessage : error.message;
 
-      snackbar.addItem({
-        key,
-        message,
-        status: 'alert',
-        onClose: () => {
-          snackbar.removeItem(key);
-        },
-      });
+      if (error) {
+        notifications.add({
+          key,
+          message,
+          status: 'alert',
+          onClose: () => {
+            notifications.remove(key);
+          },
+        });
+      }
     });
   };
 
