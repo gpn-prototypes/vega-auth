@@ -62,7 +62,10 @@ export const AuthPage: React.FC = () => {
               caption={slide.caption}
               className={cnAuthPage('Slide')}
             >
-              <img src={slide.img} alt={slide.caption} />
+              <div
+                className={cnAuthPage('Image')}
+                style={{ backgroundImage: `url(${slide.img})` }}
+              />
             </Carousel.Slide>
           ))}
         </Carousel>
