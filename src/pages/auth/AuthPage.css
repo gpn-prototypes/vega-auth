@@ -40,8 +40,6 @@
     padding-bottom: 49%;
 
     max-width: 900px;
-
-    background: var(--color-bg-system);
   }
 
   &__Image {
