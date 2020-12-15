@@ -45,6 +45,9 @@ type Error = {
   [key: string]: any;
 };
 
+const authErrorMessage =
+  'Неверный e-mail или пароль. Проверьте введенные данные и повторите попытку.';
+
 export const AuthForm: AuthFormComponent = (props) => {
   const { onLogin, isFetching, containerClassName, formClassName } = props;
   const { notifications } = useAppContext();
@@ -52,16 +55,16 @@ export const AuthForm: AuthFormComponent = (props) => {
   const handleAuthSubmit = (values: State): void => {
     onLogin(values).catch((error: Error) => {
       const key = `${error.code}-alert`;
-      if (error) {
-        notifications.add({
-          key,
-          message: error.message,
-          status: 'alert',
-          onClose: () => {
-            notifications.remove(key);
-          },
-        });
-      }
+      const message = error.code === 'AUTH_ERROR' ? authErrorMessage : error.message;
+
+      notifications.add({
+        key,
+        message,
+        status: 'alert',
+        onClose: () => {
+          notifications.remove(key);
+        },
+      });
     });
   };
 
