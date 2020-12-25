@@ -22,7 +22,15 @@ const slides: Slide[] = [
   { caption: 'Наглядный результат расчёта Ресурсной Базы ', img: imgTotal },
 ];
 
-export const AuthPage: React.FC = () => {
+const testId = {
+  carousel: 'AuthPage:Carousel',
+};
+
+type AuthPageType = React.FC & {
+  testId: typeof testId;
+};
+
+export const AuthPage: AuthPageType = () => {
   const [idx, setIdx] = useState(0);
   const { identity } = useAppContext();
 
@@ -55,7 +63,12 @@ export const AuthPage: React.FC = () => {
         formClassName={cnAuthPage('Form')}
       />
       <div className={cnAuthPage('Teaser')}>
-        <Carousel currentIdx={idx} onChange={setIdx} className={cnAuthPage('TeaserCarousel')}>
+        <Carousel
+          currentIdx={idx}
+          onChange={setIdx}
+          className={cnAuthPage('TeaserCarousel')}
+          testId={testId.carousel}
+        >
           {slides.map((slide) => (
             <Carousel.Slide
               key={slide.caption}
@@ -73,3 +86,5 @@ export const AuthPage: React.FC = () => {
     </div>
   );
 };
+
+AuthPage.testId = testId;

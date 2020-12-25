@@ -30,10 +30,15 @@ const validator = createValidate<Partial<State>>({
 
 type ValidateMap = ReturnType<typeof validator>;
 const testId = {
+  logo: 'AuthForm:logo:gpn',
+  logoVega: 'AuthForm:logo:vega',
   form: 'AuthForm:form',
-  loginInput: 'AuthForm:loginInput',
-  passwordInput: 'AuthForm:passwordInput',
-  submit: 'AuthForm:submit',
+  loginInput: 'AuthForm:field:login',
+  loginInputLabel: 'AuthForm:label:login',
+  passwordInput: 'AuthForm:field:password',
+  passwordInputLabel: 'AuthForm:label:password',
+  submit: 'AuthForm:button:submit',
+  support: 'AuthForm:text:support',
 };
 
 type AuthFormComponent = React.FC<AuthFormProps> & {
@@ -74,7 +79,7 @@ export const AuthForm: AuthFormComponent = (props) => {
 
   return (
     <div className={cnAuthForm.mix(containerClassName)}>
-      <div className={cnAuthForm('GazpromLogo')}>
+      <div className={cnAuthForm('GazpromLogo')} data-testid={testId.logo}>
         <GazpromLogo />
       </div>
       <FinalForm onSubmit={handleAuthSubmit} validate={validate}>
@@ -85,10 +90,10 @@ export const AuthForm: AuthFormComponent = (props) => {
             data-testid={testId.form}
             className={cnAuthForm('Form').mix(formClassName)}
           >
-            <Logo className={cnAuthForm('Logo')} />
+            <Logo className={cnAuthForm('Logo')} data-testid={testId.logoVega} />
             <Form.Row>
               <Form.Field>
-                <Form.Label htmlFor="login" space="xs">
+                <Form.Label htmlFor="login" space="xs" data-testid={testId.loginInputLabel}>
                   <Text size="l" lineHeight="s" view="secondary">
                     E-mail
                   </Text>
@@ -107,7 +112,7 @@ export const AuthForm: AuthFormComponent = (props) => {
             </Form.Row>
             <Form.Row space="m">
               <Form.Field>
-                <Form.Label htmlFor="password" space="xs">
+                <Form.Label htmlFor="password" space="xs" data-testid={testId.passwordInputLabel}>
                   <Text size="l" lineHeight="s" view="secondary">
                     Пароль
                   </Text>
