@@ -142,6 +142,7 @@ export const AuthForm: AuthFormComponent = (props) => {
               <Text size="s" lineHeight="xs" view="secondary">
                 Если вы забыли пароль, обратитесь в&nbsp;
                 <a
+                  data-testid={testId.support}
                   href="mailto:support@vegaspace.tk"
                   className={cnAuthForm('Link')}
                   target="_blank"
