@@ -11261,22 +11261,22 @@ webpack-cli@^3.3.12:
     v8-compile-cache "^2.1.1"
     yargs "^13.3.2"
 
-webpack-config-single-spa-react-ts@^1.17.6:
-  version "1.17.6"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react-ts/-/webpack-config-single-spa-react-ts-1.17.6.tgz#c25b2053074c1add1320321853ee9d36df3cd2ce"
-  integrity sha512-3OW6P9fmMQRmMEtaVtCZkvOCKjLtdA8Yh2xji7VFSsw5+k0o5xr5UD9kS49it6mvvFZNk8POaolR4IYS+qO79Q==
+webpack-config-single-spa-react-ts@^1.18.3:
+  version "1.18.3"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react-ts/-/webpack-config-single-spa-react-ts-1.18.3.tgz#41760b0b52467a6f3c23942a2f98944174853cbb"
+  integrity sha512-yVvE6bxbBoYphim9oGdgdQjs96ArMGluDwvdgWBFj7W/neGlR5Jr/Gkqj5lH+b0FTVFeppn5JuI6v4fb+l14pg==
   dependencies:
-    webpack-config-single-spa-react "^1.17.6"
-    webpack-config-single-spa-ts "^1.17.6"
+    webpack-config-single-spa-react "^1.18.3"
+    webpack-config-single-spa-ts "^1.18.3"
 
-webpack-config-single-spa-react@^1.17.6, webpack-config-single-spa-react@^1.18.3:
+webpack-config-single-spa-react@^1.18.3:
   version "1.18.3"
   resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react/-/webpack-config-single-spa-react-1.18.3.tgz#c43c2cfd629a2c0332dc883a3e02efa68e12ed71"
   integrity sha512-k7tkAmjGegHyJiTSSLzY26aKK9sN4oGO7GSNWZMgFyYiwmRz52/HKabOsAJ7ZzZ8iTnoXU7n4hFieBucs8bNbg==
   dependencies:
     webpack-config-single-spa "^1.18.3"
 
-webpack-config-single-spa-ts@^1.17.6, webpack-config-single-spa-ts@^1.18.3:
+webpack-config-single-spa-ts@^1.18.3:
   version "1.18.3"
   resolved "https://registry.yarnpkg.com/webpack-config-single-spa-ts/-/webpack-config-single-spa-ts-1.18.3.tgz#c2d837b67b5f8ffe58bd382b1dcdf56f3bbe010f"
   integrity sha512-VrXIhQmdCWni3iXMkJhfd5OlZCttzMgMR3EiX1uTYyf9rks5/Z6JgPr8cJmZu0C7scVk3J6DU0B6yZvsvI0xxw==
