@@ -32,7 +32,7 @@ type AuthPageType = React.FC & {
 
 export const AuthPage: AuthPageType = () => {
   const [idx, setIdx] = useState(0);
-  const { identity } = useAppContext();
+  const { identity, notifications } = useAppContext();
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,7 +41,20 @@ export const AuthPage: AuthPageType = () => {
 
     if (useUnstableAuthSSO === 'true') {
       // @ts-expect-error: ожидает типы
-      identity?.authSSO().catch(() => setIsLoading(false));
+      identity?.authSSO().catch(() => {
+        setIsLoading(false);
+
+        const key = 'sso-error-alert';
+
+        notifications.add({
+          key,
+          message: 'При входе возникла ошибка, войдите с помощью учетной записи',
+          status: 'alert',
+          onClose: () => {
+            notifications.remove(key);
+          },
+        });
+      });
     } else {
       setIsLoading(false);
     }
