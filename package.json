@@ -72,7 +72,7 @@
     "webpack-config-single-spa-react": "^1.18.3",
     "webpack-config-single-spa-react-ts": "^1.17.6",
     "webpack-config-single-spa-ts": "^1.18.3",
-    "webpack-dev-server": "^3.11.0",
+    "webpack-dev-server": "^3.11.1",
     "webpack-import-map-plugin": "^1.0.0-alpha0",
     "webpack-merge": "^5.7.3"
   }
