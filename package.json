@@ -67,7 +67,7 @@
     "postcss-nested": "^5.0.3",
     "systemjs-webpack-interop": "^2.3.4",
     "ts-essentials": "^7.0.1",
-    "webpack": "^4.45.0",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-config-single-spa-react": "^1.18.3",
     "webpack-config-single-spa-react-ts": "^1.18.3",
